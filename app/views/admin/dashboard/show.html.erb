@@ -1,2 +1,15 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<h1>Admin Dashboard</h1>
+
+<header>Stats</header>
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <td># of Products</td>
+      <td><%= @products_count %></td>
+    </tr>
+    <tr>
+      <td># of Categories</td>
+      <td><%= @category_count %></td>
+    </tr>
+  </tbody>
+</table>
