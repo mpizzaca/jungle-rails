@@ -132,5 +132,16 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+## SALES
+
+Sale.destroy_all
+
+Sale.create!(name: 'X-mas', percent_off: 40, starts_on: '2021-12-05', ends_on: '2022-01-03')
+Sale.create!(name: 'March Break', percent_off: 15, starts_on: '2021-03-20', ends_on: '2021-04-19')
+Sale.create!(name: 'May Days', percent_off: 25, starts_on: '2021-05-01', ends_on: '2021-05-31')
+Sale.create!(name: 'Summer Smash', percent_off: 18, starts_on: '2021-06-01', ends_on: '2021-06-30')
+Sale.create!(name: 'Jubilous July', percent_off: 18, starts_on: '2021-07-01', ends_on: '2021-07-31')
+Sale.create!(name: 'Absolutely August', percent_off: 18, starts_on: '2021-08-01', ends_on: '2021-08-31')
+
 
 puts "DONE!"
