@@ -1,5 +1,7 @@
 class Product < ActiveRecord::Base
 
+  attr_accessor :discounted_price_cents
+
   monetize :price_cents, numericality: true
   mount_uploader :image, ProductImageUploader
 
