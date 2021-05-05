@@ -18,14 +18,8 @@
   </footer>
 
   <aside class="price">
-    <% if product.discounted_price_cents == nil %>
-      <%= humanized_money_with_symbol product.price %>
-    <% else %>
-      <%= humanized_money_with_symbol product.price %>
-      <%# TODO: show original / discounted price %>
-    <% end %>
+    <%= render 'price_badge', product: product %>
   </aside>
-  <%= puts product.discounted_price_cents == nil%>
 
   <% if product.quantity === 0 %>
     <aside class="sold-out">

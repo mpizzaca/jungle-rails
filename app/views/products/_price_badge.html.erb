@@ -1,0 +1,7 @@
+<% if product.discounted_price_cents == nil %>
+  <%= humanized_money_with_symbol product.price %>
+<% else %>
+  <span class="label label-danger">On Sale!</span><br/>
+  <s style="font-size: 85%"><%= humanized_money_with_symbol product.price %></s><br/>
+  <%= humanized_money_with_symbol product.discounted_price_cents / 100.0 %>
+<% end %>
