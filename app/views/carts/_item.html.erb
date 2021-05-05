@@ -8,7 +8,12 @@
     <p><%= product.description %></p>
   </td>
   <td>
-    <%= humanized_money_with_symbol product.price %>
+    <% if product.discounted_price_cents == nil %>
+      <%= humanized_money_with_symbol product.price %>
+    <% else %>
+      <s><%= humanized_money_with_symbol product.price %></s>
+      <%= humanized_money_with_symbol product.discounted_price_cents / 100.0 %>
+    <% end %>
   </td>
   <td>
     <%= button_to remove_item_cart_path(product_id: product.id), class: 'btn btn-xs btn-danger' do %> - <% end %>
@@ -16,6 +21,10 @@
     <%= button_to add_item_cart_path(product_id: product.id), class: 'btn btn-xs btn-success' do %> + <% end %>
   </td>
   <td>
-    <%= humanized_money_with_symbol product.price * quantity %>
+    <% if product.discounted_price_cents == nil %>
+      <%= humanized_money_with_symbol product.price * quantity %>
+    <% else %>
+      <%= humanized_money_with_symbol product.discounted_price_cents / 100.0 * quantity %>
+    <% end %>
   </td>
 </tr>
